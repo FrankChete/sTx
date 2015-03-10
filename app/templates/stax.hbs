@@ -9,18 +9,18 @@
 
           <br>
           <br>
-          <input id="rbXoomTN" type="radio" name="letter" value="A" checked="true" />
+          <input id="rbXoomTN" type="radio" name="letter" value="A" checked="true"/>
           <hf >Xoom Tracking Number</hf>
-          <input id="rbNumber" type="radio" name="letter" value="B" checked="true" />
+          <input id="rbNumber" type="radio" name="letter" value="B" checked="true"/>
           <hf>Number</hf>
-          <input id="rbBarcode" type="radio" name="letter"   value="C" checked="true" />
+          <input id="rbBarcode" type="radio" name="letter"   value="C" checked="true"/>
           <hf>Barcode</hf>
           <br>
 
           <form class="col-lg-12">
             <br>
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
-              <input type="text" class="center-block form-control input-lg" title="Search Item" name=AccountId>
+              <input type="text" class="center-block form-control input-lg" title="Search Item" id="AccountId">
               <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button" {{action 'findAccounts'}}>OK</button></span>
             </div>
           </form>
@@ -42,14 +42,14 @@
 
 
 
-<div class ="container" name="accountsList">
+<div class ="container" id="accountsList" style="visibility: hidden">
 <div class="header">
   <h3>We found these accounts for you!</h3>
 </div>
 
  {{#each stax in model}}
   <!--/Accounts-->
-  			  <div class="row">
+  			  <div class="row" style="visibility: hidden" {{bind-attr id="stax.number"}}>
   				<br>
   				<div class="col-md-2 col-sm-3 text-center">
   				  <a class="story-title" href="#"><img {{bind-attr src="stax.logoUrl"}} alt="" style="width:100px;height:100px" class="img-circle" ></a>
@@ -61,8 +61,8 @@
             {{#if stax.barcode}}
               <h5>Barcode: {{stax.barcode}}</h5>
             {{/if}}
-            {{#if stax.xoomtn}}
-              <h5>Xoom Tracking Number: {{stax.xoomtn}}</h5>
+            {{#if stax.XoomTN}}
+              <h5>Xoom Tracking Number: {{stax.XoomTN}}</h5>
             {{/if}}
             <h5>State: {{stax.state}}</h5>
             <h5>Total: {{stax.total}}</h5>

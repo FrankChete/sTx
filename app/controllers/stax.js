@@ -1,11 +1,47 @@
 import Ember from 'ember';
 
+var MX="2911333863";
+var SV="2343953";
+var GT="54588486";
+var XoomTN = "842278423719";
+var Barcode ="29113338630000008333";
+
 export default Ember.ArrayController.extend({
+
     actions: {
+
       findAccounts: function() {
-        alert("Boooom@!");
-        var account = this.get('AccountId');
-        console.log(account);
-      }
+        var account = document.getElementById('AccountId').value;
+
+        if(account=== XoomTN || account === Barcode)
+        {
+          account=MX;
+        }
+
+        if (account === GT)
+          {
+            document.getElementById(GT).style.display = "inline";
+            document.getElementById(MX).style.display = "none";
+            document.getElementById(SV).style.display = "none";
+          }
+        if (account === MX)
+          {
+            document.getElementById(MX).style.display = "inline";
+            document.getElementById(GT).style.display = "none";
+            document.getElementById(SV).style.display = "none";
+          }
+        if (account === SV)
+          {
+            document.getElementById(SV).style.display = "inline";
+            document.getElementById(GT).style.display = "none";
+            document.getElementById(MX).style.display = "none";
+          }
+
+        document.getElementById('accountsList').style.visibility = "visible";
+        document.getElementById(account).style.visibility = "visible";
+
+
+      },
+
     }
 });

@@ -4,10 +4,10 @@ import DS from "ember-data";
 var Stax = DS.Model.extend({
   country: DS.attr('string'),
   service: DS.attr('string'),
-  number: DS.attr('number'),
+  number: DS.attr('string'),
   state: DS.attr('string'),
   barcode: DS.attr('string'),
-  XoomTN: DS.attr('number'),
+  XoomTN: DS.attr('string'),
   total: DS.attr('string'),
   logoUrl: DS.attr('string')
 });
@@ -18,7 +18,7 @@ Stax.reopenClass({
            id: 1,
            country: 'GT',
            service: 'claro-phone-postpay',
-           number: 40516589,
+           number: 54588486,
            state: 'ready',
            total: "Q241.50",
            logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png'
@@ -39,7 +39,7 @@ Stax.reopenClass({
            country: 'SV',
            service: 'delsur-electricity-postpay',
            number: 2343953,
-           state: 'processed',
+           state: 'ready',
            total: "$3.82",
            logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/sv/delsur-electricity-postpay/logos/tall.png'
          }
