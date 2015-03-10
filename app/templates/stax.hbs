@@ -43,8 +43,12 @@
 
 
 <div class ="container" id="accountsList" style="visibility: hidden">
-<div class="header">
+<div class="header" id="divOk">
   <h3>We found these accounts for you!</h3>
+</div>
+
+<div class="header" id="divError" style="visibility: hidden">
+  <h3>We're sorry. We don't find any account with that search parameters...</h3>
 </div>
 
  {{#each stax in model}}
@@ -54,7 +58,7 @@
   				<div class="col-md-2 col-sm-3 text-center">
   				  <a class="story-title" href="#"><img {{bind-attr src="stax.logoUrl"}} alt="" style="width:100px;height:100px" class="img-circle" ></a>
   				</div>
-  				<div class="col-md-10 col-sm-9">
+  				<div class="col-md-6 col-sm-6">
   				  <h3>{{stax.country}}</h3>
   				  <h5>Service: {{stax.service}}</h5>
             <h5>Number: {{stax.number}}</h5>
@@ -69,11 +73,17 @@
             <div class="row">
   					<div class="col-xs-9">
   					  <h4><span class="label label-default">{{stax.title}}</span></h4><h4>
-  					  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
+  					  <small style="font-family:courier,'new courier';" class="text-muted"> {{stax.time}}  • <a href="#" class="text-muted">Read More</a></small>
   					  </h4></div>
   					<div class="col-xs-3"></div>
   				  </div>
   				  <br><br>
+  				</div>
+          <div class="col-md-4 col-sm-3 text-center">
+  				  <a class="story-title" href="#">
+              <button class="btn btn-lg btn-success" type="button" >Refresh</button>
+              <!-- {{bs-notifications style="z-index: 1000; position: fixed; width: 50%; left: 0; right: 0; margin-left: auto; margin-right: auto; margin-top: 50px;"}} -->
+            </a>
   				</div>
   			  </div>
   			  <hr>

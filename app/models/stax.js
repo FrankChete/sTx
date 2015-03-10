@@ -9,6 +9,7 @@ var Stax = DS.Model.extend({
   barcode: DS.attr('string'),
   XoomTN: DS.attr('string'),
   total: DS.attr('string'),
+  time: DS.attr('string'),
   logoUrl: DS.attr('string')
 });
 
@@ -21,6 +22,7 @@ Stax.reopenClass({
            number: 54588486,
            state: 'ready',
            total: "Q241.50",
+           time:"17 days ago",
            logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png'
          },
          {
@@ -32,6 +34,7 @@ Stax.reopenClass({
            barcode: "29113338630000008333",
            XoomTN: '842278423719',
            total: "$383.00",
+           time:"2 hours ago",
            logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/mx/telmex-phone-postpay/logos/tall.png'
          },
          {
@@ -41,6 +44,7 @@ Stax.reopenClass({
            number: 2343953,
            state: 'ready',
            total: "$3.82",
+           time:"19 hours ago",
            logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/sv/delsur-electricity-postpay/logos/tall.png'
          }
     ]

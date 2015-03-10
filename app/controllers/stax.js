@@ -18,6 +18,20 @@ export default Ember.ArrayController.extend({
           account=MX;
         }
 
+        if (account !== MX && account !== GT && account !== SV )
+        {
+            document.getElementById('divError').style.visibility = "visible";
+            document.getElementById('divOk').style.visibility = "hidden";
+
+              document.getElementById(GT).style.display = "none";
+              document.getElementById(MX).style.display = "none";
+              document.getElementById(SV).style.display = "none";
+        }else{
+            document.getElementById('accountsList').style.visibility = "visible";
+            document.getElementById('divError').style.visibility = "hidden";
+            document.getElementById('divOk').style.visibility = "visible";
+        }
+
         if (account === GT)
           {
             document.getElementById(GT).style.display = "inline";
@@ -37,7 +51,6 @@ export default Ember.ArrayController.extend({
             document.getElementById(MX).style.display = "none";
           }
 
-        document.getElementById('accountsList').style.visibility = "visible";
         document.getElementById(account).style.visibility = "visible";
 
 
