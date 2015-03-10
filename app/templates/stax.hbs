@@ -48,16 +48,25 @@
 </div>
 
  {{#each stax in model}}
-
-  <!--/stories-->
+  <!--/Accounts-->
   			  <div class="row">
   				<br>
   				<div class="col-md-2 col-sm-3 text-center">
-  				  <a class="story-title" href="#"><img alt="" src="https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png" style="width:100px;height:100px" class="img-circle"></a>
+  				  <a class="story-title" href="#"><img {{bind-attr src="stax.logoUrl"}} alt="" style="width:100px;height:100px" class="img-circle" ></a>
   				</div>
   				<div class="col-md-10 col-sm-9">
   				  <h3>{{stax.country}}</h3>
-  				  <div class="row">
+  				  <h5>Service: {{stax.service}}</h5>
+            <h5>Number: {{stax.number}}</h5>
+            {{#if stax.barcode}}
+              <h5>Barcode: {{stax.barcode}}</h5>
+            {{/if}}
+            {{#if stax.xoomtn}}
+              <h5>Xoom Tracking Number: {{stax.xoomtn}}</h5>
+            {{/if}}
+            <h5>State: {{stax.state}}</h5>
+            <h5>Total: {{stax.total}}</h5>
+            <div class="row">
   					<div class="col-xs-9">
   					  <h4><span class="label label-default">{{stax.title}}</span></h4><h4>
   					  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
