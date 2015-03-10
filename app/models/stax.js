@@ -1,29 +1,41 @@
 import DS from "ember-data";
 
+
 var Stax = DS.Model.extend({
-  title: DS.attr(),
-  isCompleted: DS.attr()
+  country: DS.attr('string'),
+  service: DS.attr('string'),
+  number: DS.attr('number'),
+  state: DS.attr('string'),
+  foto: DS.attr('string')
 });
 
-Stax.reopen.Class({
-  FIXTURES: [
+Stax.reopenClass({
+    FIXTURES: [
         {
            id: 1,
-           title: 'Learn Ember.js',
-           isCompleted: true
+           country: 'GT',
+           service: 'claro-phone-postpay',
+           number: 40516589,
+           state: 'ready',
+           foto: 'https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png'
          },
          {
            id: 2,
-           title: 'asdf',
-           isCompleted: false
+           country: 'MX',
+           service: 'telmex-phone-postpay',
+           number: 2911333863,
+           state: 'invoice',
+           foto: 'X'
          },
          {
            id: 3,
-           title: 'Profit!',
-           isCompleted: false
+           country: 'GT',
+           service: 'claro-phone-postpay',
+           number: 40516589,
+           state: 'ready',
+           foto: ''
          }
     ]
-
 });
 
 export default Stax;
