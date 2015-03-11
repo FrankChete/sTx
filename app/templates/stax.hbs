@@ -24,6 +24,7 @@
               <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button" {{action 'findAccounts'}}>OK</button></span>
             </div>
           </form>
+          <hf >Define my own search params</hf>
         </div>
 
       </div> <!-- /row -->
@@ -48,7 +49,7 @@
 </div>
 
 <div class="header" id="divError" style="visibility: hidden">
-  <h3>We're sorry. We don't find any account with that search parameters...</h3>
+  <h3>We're sorry. We didn't find any account with that search parameters...</h3>
 </div>
 
  {{#each stax in model}}
@@ -61,7 +62,7 @@
   				<div class="col-md-6 col-sm-6">
   				  <h3>{{stax.country}}</h3>
   				  <h5>Service: {{stax.service}}</h5>
-            <h5>Number: {{stax.number}}</h5>
+            Number: <label for="number" style="background-color: yellow">{{stax.number}}</label>
             {{#if stax.barcode}}
               <h5>Barcode: {{stax.barcode}}</h5>
             {{/if}}
@@ -69,11 +70,11 @@
               <h5>Xoom Tracking Number: {{stax.XoomTN}}</h5>
             {{/if}}
             <h5>State: {{stax.state}}</h5>
-            <h5>Total: {{stax.total}}</h5>
+            <div {{bind-attr id="stax.id"}}><h5>Total: {{stax.total}}</h5></div>
             <div class="row">
   					<div class="col-xs-9">
   					  <h4><span class="label label-default">{{stax.title}}</span></h4><h4>
-  					  <small style="font-family:courier,'new courier';" class="text-muted"> {{stax.time}}  • <a href="#" class="text-muted">Read More</a></small>
+  					  <small style="font-family:courier,'new courier';" class="text-muted"> {{stax.time}}  • <a href="#" class="text-muted" >Read More</a></small>
   					  </h4></div>
   					<div class="col-xs-3"></div>
   				  </div>
@@ -81,7 +82,11 @@
   				</div>
           <div class="col-md-4 col-sm-3 text-center">
   				  <a class="story-title" href="#">
-              <button class="btn btn-lg btn-success" type="button" >Refresh</button>
+              {{#if stax.error}}
+                <button class="btn btn-lg btn-danger" type="button" >Retry</button>
+              {{else}}
+                <button class="btn btn-lg btn-success" type="button" {{action 'refreshBalance'}}>Refresh</button>
+              {{/if}}
               <!-- {{bs-notifications style="z-index: 1000; position: fixed; width: 50%; left: 0; right: 0; margin-left: auto; margin-right: auto; margin-top: 50px;"}} -->
             </a>
   				</div>
@@ -89,5 +94,5 @@
   			  <hr>
   {{/each}}
 
-
+  <div id='modalpanel'></div>
 </div>

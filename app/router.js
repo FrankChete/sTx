@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('stax', {path: '/'});
+  this.resource('account',{path:"/account"})
 });
 
 export default Router;

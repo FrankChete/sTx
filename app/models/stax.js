@@ -10,7 +10,8 @@ var Stax = DS.Model.extend({
   XoomTN: DS.attr('string'),
   total: DS.attr('string'),
   time: DS.attr('string'),
-  logoUrl: DS.attr('string')
+  logoUrl: DS.attr('string'),
+  error: DS.attr('string')
 });
 
 Stax.reopenClass({
@@ -20,6 +21,27 @@ Stax.reopenClass({
            country: 'GT',
            service: 'claro-phone-postpay',
            number: 54588486,
+           state: 'error',
+           error: 'yes',
+           total: "Q41.50",
+           time:"17 days ago",
+           logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png'
+         },
+         {
+           id: 6,
+           country: 'GT',
+           service: 'claro-phone-postpay',
+           number: 54588948,
+           state: 'ready',
+           total: "Q21.50",
+           time:"17 days ago",
+           logoUrl: 'https://s3.amazonaws.com/assets.bluekite.com/services/gt/claro-phone-postpay/logos/tall.png'
+         },
+         {
+           id: 9,
+           country: 'GT',
+           service: 'claro-phone-postpay',
+           number: 54589836,
            state: 'ready',
            total: "Q241.50",
            time:"17 days ago",
